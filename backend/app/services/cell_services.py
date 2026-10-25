@@ -58,8 +58,6 @@ def get_cell(cell_id, date_str):
         },
         "static": {
             "elevation": cell.elevation,
-            "slope": cell.slope,
-            "dist_to_road_m": cell.dist_to_road_m,
         },
         "weather": {
             "temp_c": daily.temp_c,
@@ -143,5 +141,4 @@ def get_cell_timeseries(cell_id, feature, start_str, end_str):
         "end": end_date.isoformat(),
         "count": len(points),
         "points": points,
-    } 
-    
+    }

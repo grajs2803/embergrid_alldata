@@ -12,6 +12,9 @@ def create_app(env=None):
     
     db.init_app(app)
 
+    from app.errors import register_error_handlers
+    register_error_handlers(app)         
+
 
 
     from app.routes.auth_routes import auth_bp

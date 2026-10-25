@@ -4,24 +4,18 @@ import math
 FEATURES = [
     "fwi",
     "ndvi",
-    "slope",
-    "dist_to_road_m",
     "rainfall_mm",
 ]
 
 STATS = {
     "fwi": (12.0, 8.0),
     "ndvi": (0.55, 0.15),
-    "slope": (12.0, 8.0),
-    "dist_to_road_m": (2500.0, 1500.0),
     "rainfall_mm": (3.0, 5.0),
 }
 
 WEIGHTS = {
     "fwi": 1.1,
     "ndvi": -0.7,
-    "slope": 0.4,
-    "dist_to_road_m": -0.3,
     "rainfall_mm": -0.5,
 }
 
@@ -42,7 +36,7 @@ def risk_level(p):
 
 
 class DummyRiskModel:
-    version = "dummy-0.1.0"
+    version = "dummy-0.2.0"   # feature set changed (slope, dist_to_road_m removed): new version keeps old scores separate
     trained_at = "2026-01-01T00:00:00Z"
     feature_list = FEATURES
     metrics = {
@@ -95,7 +89,3 @@ class DummyRiskModel:
             "base_value": BIAS,
             "contributions": contributions,
         }
-
-        
-        
-        

@@ -4,6 +4,7 @@ from werkzeug.exceptions import HTTPException
 
 class APIError(Exception):
     status_code = 400
+    code = "bad_request"          # the handler below reads error.code; it did not exist before
 
     def __init__(self, message, status_code=None, details=None):
         super().__init__(message)
@@ -15,6 +16,7 @@ class APIError(Exception):
 
 class NotFound(APIError):
     status_code = 404
+    code = "not_found"
 
 
 def register_error_handlers(app):

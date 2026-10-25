@@ -9,7 +9,5 @@ class Cell(db.Model):
     lon = db.Column(db.Float, nullable=False)
     district = db.Column(db.String)
     elevation = db.Column(db.Float)
-    slope = db.Column(db.Float)
-    dist_to_road_m = db.Column(db.Float)
 
     __table_args__ = (db.Index("ix_cells_lat_lon", "lat", "lon"),)
